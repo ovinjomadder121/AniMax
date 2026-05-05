@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "Photo": {
+      "title": "Photo",
+      "description": "Metadata for an uploaded photo",
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The URL of the image"
+        },
+        "title": {
+          "type": "string",
+          "description": "Caption or title of the photograph"
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional description"
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Hashtags or categories"
+        },
+        "views": {
+          "type": "number",
+          "description": "Total views for trending section"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the photo was added"
+        },
+        "size": {
+          "type": "number",
+          "description": "File size in bytes"
+        }
+      },
+      "required": ["url", "title", "createdAt"]
+    }
+  },
+  "firestore": {
+    "photos": {
+      "schema": "Photo",
+      "description": "Collection of all public photos"
+    }
+  }
+}
